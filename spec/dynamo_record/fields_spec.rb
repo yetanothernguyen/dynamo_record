@@ -8,7 +8,15 @@ RSpec.describe DynamoRecord::Fields do
   end
 
   it 'accepts adding fields' do
-    expect(Person.attributes).to eq({name: {type: :string, options: {}}})
+    class Employee
+      include DynamoRecord::Document
+
+      field :first_name, :string
+      field :last_name, :string
+    end
+    expect(Employee.attributes).to eq({id: {type: :string, options: {}},
+                                     first_name: {type: :string, options: {}},
+                                     last_name: {type: :string, options: {}}})
   end
 
   it 'accepts adding fields with index' do
@@ -18,7 +26,8 @@ RSpec.describe DynamoRecord::Fields do
       field :name, :string, index: true
     end
 
-    expect(City.attributes).to eq({name: {type: :string, options: {index: true}}})
+    expect(City.attributes).to eq({id: {type: :string, options: {}},
+                                   name: {type: :string, options: {index: true}}})
   end
 
   it 'initializes with field values' do

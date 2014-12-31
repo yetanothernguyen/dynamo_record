@@ -13,7 +13,7 @@ module DynamoRecord
     module ClassMethods
       def field(name, type = :string, opts = {})
         named = name.to_s
-        self.attributes = attributes.merge(name: {type: type, options: opts})
+        self.attributes.merge!(name => {type: type, options: opts})
 
         define_method("#{named}=") { |value| write_attribute(named, value) }
         define_method("#{name}") { read_attribute(named) }
