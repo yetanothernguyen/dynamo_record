@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Nguyen Vu Nguyen"]
   spec.email         = ["nvunguyen@gmail.com"]
   spec.summary       = %q{A simple DynamoDB ORM wrapper on top of aws-sdk v2}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/yetanothernguyen/dynamo_record"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "activesupport", "~> 4.1.0"
+  spec.add_dependency "activesupport", "> 4.0.0"
   spec.add_dependency "aws-sdk", "~> 2.0.17.pre"
 
   spec.add_development_dependency "bundler", "~> 1.7"
