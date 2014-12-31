@@ -1,0 +1,199 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dynamodb.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"people","Limit":1}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.0.17 ruby/2.1.2 x86_64-darwin14.0
+      X-Amz-Target:
+      - DynamoDB_20120810.Scan
+      X-Amz-Date:
+      - 20141230T114320Z
+      Host:
+      - dynamodb.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - 54df2dd883b3a165a22f71b0ace6b8db25d947ebf52c1502cc59c38de8a1a3c4
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20141230/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=9aa8e0e1374b79fc861fb2b4c9534861fb269cf85b6967b9ae22eec6a6c9895c
+      Content-Length:
+      - '32'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 6H7IQESE78OADNCNO179BQUP2NVV4KQNSO5AEMVJF66Q9ASUAAJG
+      X-Amz-Crc32:
+      - '3317214002'
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '185'
+      Date:
+      - Tue, 30 Dec 2014 11:43:21 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Count":1,"Items":[{"name":{"S":"Person 1"},"id":{"S":"f9b351b0-d06d-4fff-b8d4-8af162e2b8ba"}}],"LastEvaluatedKey":{"id":{"S":"f9b351b0-d06d-4fff-b8d4-8af162e2b8ba"}},"ScannedCount":1}'
+    http_version: 
+  recorded_at: Tue, 30 Dec 2014 11:43:21 GMT
+- request:
+    method: post
+    uri: https://dynamodb.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"people","Limit":1,"ExclusiveStartKey":{"id":{"S":"f9b351b0-d06d-4fff-b8d4-8af162e2b8ba"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.0.17 ruby/2.1.2 x86_64-darwin14.0
+      X-Amz-Target:
+      - DynamoDB_20120810.Scan
+      X-Amz-Date:
+      - 20141230T114321Z
+      Host:
+      - dynamodb.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - e819b0d48e930bfcd8fa67f016c63b87a72ec1d75829eb3c81c57645c0d8c9c7
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20141230/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=5ab8843d3e4502c5ab30590e68bfdfd34ae58bd007c651d653dc064ee2500bbf
+      Content-Length:
+      - '104'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - NC9IRQEMK8IGGDLU14N5F5AR4BVV4KQNSO5AEMVJF66Q9ASUAAJG
+      X-Amz-Crc32:
+      - '1677251292'
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '185'
+      Date:
+      - Tue, 30 Dec 2014 11:43:21 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Count":1,"Items":[{"name":{"S":"Person 2"},"id":{"S":"611b5bc7-849f-4e0c-b969-5b53b6f2d0e2"}}],"LastEvaluatedKey":{"id":{"S":"611b5bc7-849f-4e0c-b969-5b53b6f2d0e2"}},"ScannedCount":1}'
+    http_version: 
+  recorded_at: Tue, 30 Dec 2014 11:43:22 GMT
+- request:
+    method: post
+    uri: https://dynamodb.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"people","Limit":1,"ExclusiveStartKey":{"id":{"S":"611b5bc7-849f-4e0c-b969-5b53b6f2d0e2"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.0.17 ruby/2.1.2 x86_64-darwin14.0
+      X-Amz-Target:
+      - DynamoDB_20120810.Scan
+      X-Amz-Date:
+      - 20141230T114322Z
+      Host:
+      - dynamodb.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - fed3d1e59bf4fa192eb93ff7b00ff9983e3e47b8e573f4761cee996e87e7df15
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20141230/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=3ca01407d3a191901e1edcfaa52ffd16cc1a54137664fd7ba468402e9a9a6a80
+      Content-Length:
+      - '104'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 8J03SQSR6OCTCMTAGL2570CPFNVV4KQNSO5AEMVJF66Q9ASUAAJG
+      X-Amz-Crc32:
+      - '3600301219'
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '185'
+      Date:
+      - Tue, 30 Dec 2014 11:43:22 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Count":1,"Items":[{"name":{"S":"Person 3"},"id":{"S":"1f1124dc-6ad7-4296-a243-ff58a0a09416"}}],"LastEvaluatedKey":{"id":{"S":"1f1124dc-6ad7-4296-a243-ff58a0a09416"}},"ScannedCount":1}'
+    http_version: 
+  recorded_at: Tue, 30 Dec 2014 11:43:23 GMT
+- request:
+    method: post
+    uri: https://dynamodb.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"people","Limit":1,"ExclusiveStartKey":{"id":{"S":"1f1124dc-6ad7-4296-a243-ff58a0a09416"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.0.17 ruby/2.1.2 x86_64-darwin14.0
+      X-Amz-Target:
+      - DynamoDB_20120810.Scan
+      X-Amz-Date:
+      - 20141230T114323Z
+      Host:
+      - dynamodb.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - 24a50d2c5db473d163812ccea71a63b34894d31764195f0f94a1f6c20c6a22d3
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20141230/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=4a2f375299086a49b354764cdf8cf847295bc4d16d09470eea1f91b77a11ee5d
+      Content-Length:
+      - '104'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - QPE6Q7QN9P4OSLIHGKQR89AO5RVV4KQNSO5AEMVJF66Q9ASUAAJG
+      X-Amz-Crc32:
+      - '3413411624'
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '39'
+      Date:
+      - Tue, 30 Dec 2014 11:43:24 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Count":0,"Items":[],"ScannedCount":0}'
+    http_version: 
+  recorded_at: Tue, 30 Dec 2014 11:43:24 GMT
+recorded_with: VCR 2.9.3
