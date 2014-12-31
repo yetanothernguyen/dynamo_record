@@ -64,6 +64,12 @@ module DynamoRecord
 
         response = self.client.create_table(options)
       end
+
+      def create(attrs)
+        object = self.new(attrs)
+        object.save
+        object
+      end
     end
 
     def save

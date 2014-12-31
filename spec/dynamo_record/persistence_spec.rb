@@ -49,19 +49,18 @@ RSpec.describe DynamoRecord::Persistence, :vcr do
   end
 
   it 'saves record' do
-    expect(SecureRandom).to receive(:uuid).and_return('a uuid')
-    client = spy('client')
-    allow(Person).to receive(:client).and_return(client)
-
+    expect(SecureRandom).to receive(:uuid).and_return('de7551fa-17df-49d8-9dc0-c0266aeeab49')
     person = Person.new(name: 'A person')
     person.save
-
-    expect(client).to have_received(:put_item).
-                        with({table_name: 'people', 
-                              item: {id: 'a uuid', 
-                                   name: 'A person'}})
     expect(person.new_record).to be_falsy
-    expect(person.id).to eq('a uuid')
+    expect(person.id).to eq('de7551fa-17df-49d8-9dc0-c0266aeeab49')
+  end
+
+  it 'creates record' do
+    expect(SecureRandom).to receive(:uuid).and_return('5831f7ba-3c5a-4bad-9a83-47712fe877e4')
+    person = Person.create(name: 'A person')
+    expect(person.new_record).to be_falsy
+    expect(person.id).to eq('5831f7ba-3c5a-4bad-9a83-47712fe877e4')
   end
 
   it 'does not overwrite existing record' do
@@ -73,11 +72,6 @@ RSpec.describe DynamoRecord::Persistence, :vcr do
   end
 
   it 'updates record' do
-    DynamoRecord.configure do |config|
-      config.access_key_id = 'key'
-      config.secret_access_key = 'TfWvbWtJ96DPM+QduJDXVkGKGbwhIyAYpPSnXad1'
-    end
-
     person = Person.find('f9b351b0-d06d-4fff-b8d4-8af162e2b8ba')
     person.name = 'New name'
     person.save

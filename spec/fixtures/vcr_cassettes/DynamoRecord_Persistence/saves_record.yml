@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dynamodb.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"people","Item":{"name":{"S":"A person"},"id":{"S":"de7551fa-17df-49d8-9dc0-c0266aeeab49"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.0.17 ruby/2.1.2 x86_64-darwin14.0
+      X-Amz-Target:
+      - DynamoDB_20120810.PutItem
+      X-Amz-Date:
+      - 20141231T100447Z
+      Host:
+      - dynamodb.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - e947307a3e56bed9a3afbb1b35bf5ce13927129a44f66fbd9c0c45c91e7d42d4
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20141231/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=c12991133fa308bbb873ae70691bbbf4480145b9b76a9c7643027ce86680641f
+      Content-Length:
+      - '105'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 3TK9KQT1C09UQDDB8R1B7PBFHBVV4KQNSO5AEMVJF66Q9ASUAAJG
+      X-Amz-Crc32:
+      - '2745614147'
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '2'
+      Date:
+      - Wed, 31 Dec 2014 10:04:48 GMT
+    body:
+      encoding: UTF-8
+      string: "{}"
+    http_version: 
+  recorded_at: Wed, 31 Dec 2014 10:04:49 GMT
+recorded_with: VCR 2.9.3

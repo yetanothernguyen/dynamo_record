@@ -1,12 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe DynamoRecord::Query, :vcr do
-  before do
-    DynamoRecord.configure do |config|
-      config.access_key_id = 'key'
-      config.secret_access_key = 'TfWvbWtJ96DPM+QduJDXVkGKGbwhIyAYpPSnXad1'
-    end
-  end
 
   describe '#all' do
     it 'find all records' do
