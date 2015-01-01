@@ -1,5 +1,6 @@
 require 'securerandom'
 require 'active_support'
+require 'active_support/inflector'
 require 'active_support/concern'
 require 'active_support/core_ext'
 

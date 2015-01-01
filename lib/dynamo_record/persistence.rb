@@ -4,7 +4,8 @@ module DynamoRecord
 
     module ClassMethods
       def table_name
-        @table_name ||= DynamoRecord::Config.namespace ? "#{DynamoRecord::Config.namespace}_#{base_class.name.downcase.pluralize}" : base_class.name.downcase.pluralize
+        name = ActiveSupport::Inflector.tableize(base_class.name)
+        @table_name ||= DynamoRecord::Config.namespace ? "#{DynamoRecord::Config.namespace}_#{name}" : name
       end
 
       def client

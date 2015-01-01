@@ -5,7 +5,7 @@ http_interactions:
     uri: https://dynamodb.us-east-1.amazonaws.com/
     body:
       encoding: UTF-8
-      string: '{"AttributeDefinitions":[{"AttributeName":"id","AttributeType":"S"}],"TableName":"noindexcities","KeySchema":[{"AttributeName":"id","KeyType":"HASH"}],"ProvisionedThroughput":{"ReadCapacityUnits":20,"WriteCapacityUnits":20}}'
+      string: '{"AttributeDefinitions":[{"AttributeName":"id","AttributeType":"S"}],"TableName":"no_index_cities","KeySchema":[{"AttributeName":"id","KeyType":"HASH"}],"ProvisionedThroughput":{"ReadCapacityUnits":20,"WriteCapacityUnits":20}}'
     headers:
       Content-Type:
       - application/x-amz-json-1.0
@@ -16,17 +16,17 @@ http_interactions:
       X-Amz-Target:
       - DynamoDB_20120810.CreateTable
       X-Amz-Date:
-      - 20141231T083114Z
+      - 20150101T060008Z
       Host:
       - dynamodb.us-east-1.amazonaws.com
       X-Amz-Content-Sha256:
-      - 84495bafc50679465f581061021cb3866c6769a31efeecd7654dc3d59c33200e
+      - 225d46451c9fb8f4aecddfa640ada2ca8495691e578a716b763de9eff1f40463
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20141231/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20150101/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=04e1bd2d7bc7eae702847b952573d931f52210c30731d8263692bc22e7a3d892
+        Signature=c04fc9e73792f7f1f16eb7cee2256dfbd9960ec2657e24bd562309873684dec3
       Content-Length:
-      - '224'
+      - '226'
       Accept:
       - "*/*"
   response:
@@ -35,18 +35,18 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - JIEG7NGOH2VFG0SPHNI6V79IA3VV4KQNSO5AEMVJF66Q9ASUAAJG
+      - B1670HTESRN0V50E27FLRALVQJVV4KQNSO5AEMVJF66Q9ASUAAJG
       X-Amz-Crc32:
-      - '790699342'
+      - '3984556825'
       Content-Type:
       - application/x-amz-json-1.0
       Content-Length:
-      - '366'
+      - '368'
       Date:
-      - Wed, 31 Dec 2014 08:31:15 GMT
+      - Thu, 01 Jan 2015 06:00:09 GMT
     body:
       encoding: UTF-8
-      string: '{"TableDescription":{"AttributeDefinitions":[{"AttributeName":"id","AttributeType":"S"}],"CreationDateTime":1.420014676573E9,"ItemCount":0,"KeySchema":[{"AttributeName":"id","KeyType":"HASH"}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":20,"WriteCapacityUnits":20},"TableName":"noindexcities","TableSizeBytes":0,"TableStatus":"CREATING"}}'
+      string: '{"TableDescription":{"AttributeDefinitions":[{"AttributeName":"id","AttributeType":"S"}],"CreationDateTime":1.420092009548E9,"ItemCount":0,"KeySchema":[{"AttributeName":"id","KeyType":"HASH"}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":20,"WriteCapacityUnits":20},"TableName":"no_index_cities","TableSizeBytes":0,"TableStatus":"CREATING"}}'
     http_version: 
-  recorded_at: Wed, 31 Dec 2014 08:31:16 GMT
+  recorded_at: Thu, 01 Jan 2015 06:00:09 GMT
 recorded_with: VCR 2.9.3
