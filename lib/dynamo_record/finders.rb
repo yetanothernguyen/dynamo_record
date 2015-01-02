@@ -10,7 +10,7 @@ module DynamoRecord
                         id: id
                       }
                   )
-        response.item ? from_database(response.item) : new
+        response.item ? from_database(response.item) : nil
       end
     end
   end

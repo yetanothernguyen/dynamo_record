@@ -12,7 +12,7 @@ RSpec.describe DynamoRecord::Fields, :vcr do
     context 'when record doesn\'t exists' do
       it 'returns empty object' do
         person = Person.find('not here')
-        expect(person.id).to be_nil
+        expect(person).to be_nil
       end
     end
   end
