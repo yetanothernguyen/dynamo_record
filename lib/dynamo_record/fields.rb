@@ -17,6 +17,11 @@ module DynamoRecord
 
         define_method("#{named}=") { |value| write_attribute(named, value) }
         define_method("#{name}") { read_attribute(named) }
+        define_method("#{name}?") do
+          value = read_attribute(named)
+          return value != 'false' if value.is_a?(String)
+          !!value
+        end
       end
     end
 

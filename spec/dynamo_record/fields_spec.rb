@@ -35,4 +35,12 @@ RSpec.describe DynamoRecord::Fields do
     expect(person.name).to eq('A person')
   end
 
+  describe 'predicate method' do
+    specify { expect(Person.new(activated: false).activated?).to be_falsy }
+    specify { expect(Person.new(activated: true).activated?).to be_truthy }
+    specify { expect(Person.new(activated: 'true').activated?).to be_truthy }
+    specify { expect(Person.new(activated: 'false').activated?).to be_falsy }
+    specify { expect(Person.new(activated: '').activated?).to be_truthy }
+  end
+
 end
