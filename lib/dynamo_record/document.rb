@@ -23,6 +23,11 @@ module DynamoRecord
       @new_record = true
       @attributes = {}
 
+      # Set default
+      self.class.attributes.each do |key, value|
+        send("#{key}=", value[:options][:default]) if value[:options][:default]
+      end
+
       attrs.each do |key, value|
         send("#{key}=", value)
       end

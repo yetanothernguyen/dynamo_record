@@ -30,6 +30,16 @@ RSpec.describe DynamoRecord::Fields do
                                    name: {type: :string, options: {index: true}}})
   end
 
+  it 'accepts default value' do
+    class City
+      include DynamoRecord::Document
+
+      field :population, :integer, default: 0
+    end
+
+    expect(City.new.population).to eq(0)
+  end
+
   it 'initializes with field values' do
     person = Person.new(name: 'A person')
     expect(person.name).to eq('A person')
