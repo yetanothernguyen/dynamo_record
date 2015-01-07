@@ -16,4 +16,12 @@ RSpec.describe DynamoRecord::Document do
     expect(person.new_record).to be_falsy
   end
 
+  it 'raises error on unknown field' do
+    expect{Person.new({unknown_field: 'unknown'})}.to raise_error
+  end
+
+  it 'can ignore unknown field' do
+    expect{Person.new({unknown_field: 'unknown'}, true)}.to_not raise_error
+  end
+
 end

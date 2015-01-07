@@ -13,13 +13,13 @@ module DynamoRecord
 
     module ClassMethods
       def from_database(attrs)
-        self.new(attrs).tap { |r| r.new_record = false}
+        self.new(attrs, true).tap { |r| r.new_record = false}
       end
     end
 
     attr_accessor :new_record, :attributes
 
-    def initialize(attrs = {})
+    def initialize(attrs = {}, ignore_unknown_field = false)
       @new_record = true
       @attributes = {}
 
@@ -29,6 +29,7 @@ module DynamoRecord
       end
 
       attrs.each do |key, value|
+        next if ignore_unknown_field && !respond_to?("#{key}=")
         send("#{key}=", value)
       end
     end
