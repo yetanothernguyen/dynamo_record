@@ -12,7 +12,8 @@ module DynamoRecord
         @client ||= Aws::DynamoDB::Client.new(
                       access_key_id: DynamoRecord::Config.access_key_id,
                       secret_access_key: DynamoRecord::Config.secret_access_key,
-                      region: DynamoRecord::Config.region
+                      region: DynamoRecord::Config.region,
+                      compute_checksums: DynamoRecord::Config.compute_checksums
                     )
       end
 
