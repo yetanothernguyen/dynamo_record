@@ -45,12 +45,27 @@ RSpec.describe DynamoRecord::Fields do
     expect(person.name).to eq('A person')
   end
 
+  it 'coearce field to its data type' do
+    class Record
+      include DynamoRecord::Document
+
+      field :integer_field, :integer
+      field :float_field, :float
+      field :datetime_field, :datetime
+      field :boolean_field, :boolean
+    end
+
+    expect(Record.new(integer_field: '1').integer_field).to be_a(Fixnum)
+    expect(Record.new(float_field: '1').float_field).to be_a(Float)
+    expect(Record.new(datetime_field: '2014-12-25T04:08:25Z').datetime_field).to eq(DateTime.parse('2014-12-25T04:08:25Z'))
+    expect(Record.new(boolean_field: 'true').boolean_field).to be_truthy
+  end
+
   describe 'predicate method' do
     specify { expect(Person.new(activated: false).activated?).to be_falsy }
     specify { expect(Person.new(activated: true).activated?).to be_truthy }
     specify { expect(Person.new(activated: 'true').activated?).to be_truthy }
     specify { expect(Person.new(activated: 'false').activated?).to be_falsy }
-    specify { expect(Person.new(activated: '').activated?).to be_truthy }
   end
 
 end

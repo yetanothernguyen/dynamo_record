@@ -7,7 +7,7 @@ module DynamoRecord
 
       self.attributes = {}
 
-      field :id # default primary key
+      field :id, :string # default primary key
     end
 
     module ClassMethods
