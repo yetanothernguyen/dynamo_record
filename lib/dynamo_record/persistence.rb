@@ -82,12 +82,13 @@ module DynamoRecord
         options.merge!(condition_expression: 'id <> :s', expression_attribute_values: { ':s' => self.id })
       end
 
-      options.merge!(item: attributes)
+      options.merge!(item: self.class.unload(attributes))
       response = self.class.client.put_item(options)
       @new_record = false
       true
     rescue Aws::DynamoDB::Errors::ConditionalCheckFailedException
       false
     end
+
   end
 end

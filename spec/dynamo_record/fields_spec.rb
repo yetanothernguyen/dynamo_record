@@ -68,4 +68,11 @@ RSpec.describe DynamoRecord::Fields do
     specify { expect(Person.new(activated: 'false').activated?).to be_falsy }
   end
 
+  describe '#unload' do
+    it 'unloads DateTime into String' do
+      now = DateTime.now
+      attrs = Person.unload({created_at: now})
+      expect(attrs[:created_at]).to eq(now.iso8601)
+    end
+  end
 end
