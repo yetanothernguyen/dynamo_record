@@ -72,7 +72,7 @@ module DynamoRecord
     end
 
     def write_attribute(name, value)
-      attributes[name.to_sym] = value
+      attributes[name.to_sym] = self.class.undump_field(value, self.class.attributes[name.to_sym])
     end
 
     def read_attribute(name)

@@ -45,7 +45,7 @@ RSpec.describe DynamoRecord::Fields do
     expect(person.name).to eq('A person')
   end
 
-  it 'coearce field to its data type' do
+  it 'coearce field to its data type when intializing' do
     class Record
       include DynamoRecord::Document
 
@@ -59,6 +59,12 @@ RSpec.describe DynamoRecord::Fields do
     expect(Record.new(float_field: '1').float_field).to be_a(Float)
     expect(Record.new(datetime_field: '2014-12-25T04:08:25Z').datetime_field).to eq(DateTime.parse('2014-12-25T04:08:25Z'))
     expect(Record.new(boolean_field: 'true').boolean_field).to be_truthy
+  end
+
+  it 'coearce field to its data type when calling writer' do
+    person = Person.new
+    person.created_at = '2015-01-23T04:27:21Z'
+    expect(person.created_at).to eq(DateTime.parse('2015-01-23T04:27:21Z'))
   end
 
   describe 'predicate method' do

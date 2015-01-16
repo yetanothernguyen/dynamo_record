@@ -36,7 +36,7 @@ module DynamoRecord
     def load(attrs, ignore_unknown_field=false)
       attrs.each do |key, value|
         next if ignore_unknown_field && !respond_to?("#{key}=")
-        send("#{key}=", self.class.undump_field(value, self.class.attributes[key.to_sym]))
+        send("#{key}=", value)
       end
     end
 
