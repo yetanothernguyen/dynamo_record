@@ -19,7 +19,7 @@ module DynamoRecord
 
     end
 
-    attr_accessor :new_record, :attributes
+    attr_accessor :new_record
 
     def initialize(attrs = {}, ignore_unknown_field = false)
       @new_record = true
@@ -37,6 +37,12 @@ module DynamoRecord
       attrs.each do |key, value|
         next if ignore_unknown_field && !respond_to?("#{key}=")
         send("#{key}=", self.class.undump_field(value, self.class.attributes[key.to_sym]))
+      end
+    end
+
+    def attributes=(hash)
+      hash.each do |k, v|
+        send("#{k}=", v)
       end
     end
   end

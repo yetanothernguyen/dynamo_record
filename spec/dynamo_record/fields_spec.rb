@@ -75,4 +75,13 @@ RSpec.describe DynamoRecord::Fields do
       expect(attrs[:created_at]).to eq(now.iso8601)
     end
   end
+
+  describe '#attributes=' do
+    it 'set attributes from hash' do
+      person = Person.new(name: 'A Person', activated: true)
+      person.attributes = {name: 'Updated Person'}
+      expect(person.name).to eq('Updated Person')
+      expect(person.activated).to eq(true)
+    end
+  end
 end

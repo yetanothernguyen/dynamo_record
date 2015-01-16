@@ -3,7 +3,7 @@ module DynamoRecord
     extend ActiveSupport::Concern
 
     included do
-      class_attribute :attributes
+      class_attribute :attributes, instance_writer: false
 
       self.attributes = {}
 
