@@ -90,5 +90,12 @@ module DynamoRecord
       false
     end
 
+    def destroy
+      options = self.class.default_options
+      response = self.class.client.delete_item(
+        options.merge(key: { 'id' => self.id} )
+      )
+    end
+
   end
 end

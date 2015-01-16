@@ -80,4 +80,11 @@ RSpec.describe DynamoRecord::Persistence, :vcr do
     expect(person.name).to eq('New name')
   end
 
+  it 'destroys record' do
+    person = Person.find('f9b351b0-d06d-4fff-b8d4-8af162e2b8ba')
+    person.destroy
+    person = Person.find('f9b351b0-d06d-4fff-b8d4-8af162e2b8ba')
+    expect(person).to be_nil
+  end
+
 end
