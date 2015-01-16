@@ -12,12 +12,7 @@ VCR.configure do |c|
   c.default_cassette_options = { match_requests_on: [:method,:uri,:body] }
 end
 
-# DynamoRecord.configure do |config|
-#   config.access_key_id = 'key'
-#   config.secret_access_key = 'secret'
-# end
-
 DynamoRecord.configure do |config|
-  config.access_key_id = 'AKIAIMYVL4ZNLEDNNGVQ'
-  config.secret_access_key = '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'
+  config.access_key_id = 'key'
+  config.secret_access_key = 'secret'
 end

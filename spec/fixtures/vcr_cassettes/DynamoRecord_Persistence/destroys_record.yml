@@ -22,7 +22,7 @@ http_interactions:
       X-Amz-Content-Sha256:
       - 11a49d1d6421d3540cf7a7c96423eb631d8b8de996d5069f178a631eea8d8e01
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAIMYVL4ZNLEDNNGVQ/20150116/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20150116/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
         Signature=594884042c1dd7c46b5175963fe80f13770a4426946f3cfa8d4e6d1ef9c86c31
       Content-Length:
@@ -71,7 +71,7 @@ http_interactions:
       X-Amz-Content-Sha256:
       - 11a49d1d6421d3540cf7a7c96423eb631d8b8de996d5069f178a631eea8d8e01
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAIMYVL4ZNLEDNNGVQ/20150116/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20150116/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
         Signature=958b6d99fa3add9c2239c44cf05b7e11de63af677e571e390b3b46acfd6527de
       Content-Length:
@@ -120,7 +120,7 @@ http_interactions:
       X-Amz-Content-Sha256:
       - 11a49d1d6421d3540cf7a7c96423eb631d8b8de996d5069f178a631eea8d8e01
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIAIMYVL4ZNLEDNNGVQ/20150116/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20150116/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
         Signature=6cdf950bda59fa02691f3099a8035a676ee82cb979861271b12a96badf550f5c
       Content-Length:
