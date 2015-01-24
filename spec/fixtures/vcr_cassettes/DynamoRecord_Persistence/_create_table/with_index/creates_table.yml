@@ -5,28 +5,28 @@ http_interactions:
     uri: https://dynamodb.us-east-1.amazonaws.com/
     body:
       encoding: UTF-8
-      string: '{"AttributeDefinitions":[{"AttributeName":"id","AttributeType":"S"},{"AttributeName":"name","AttributeType":"S"}],"TableName":"index_cities","KeySchema":[{"AttributeName":"id","KeyType":"HASH"}],"ProvisionedThroughput":{"ReadCapacityUnits":20,"WriteCapacityUnits":20},"GlobalSecondaryIndexes":[{"IndexName":"name-index","KeySchema":[{"AttributeName":"name","KeyType":"HASH"}],"Projection":{"ProjectionType":"ALL"},"ProvisionedThroughput":{"ReadCapacityUnits":20,"WriteCapacityUnits":20}}]}'
+      string: '{"AttributeDefinitions":[{"AttributeName":"id","AttributeType":"S"},{"AttributeName":"subject","AttributeType":"S"},{"AttributeName":"created_at","AttributeType":"S"}],"TableName":"thread_indices","KeySchema":[{"AttributeName":"id","KeyType":"HASH"},{"AttributeName":"subject","KeyType":"RANGE"}],"ProvisionedThroughput":{"ReadCapacityUnits":20,"WriteCapacityUnits":20},"LocalSecondaryIndexes":[{"IndexName":"created_at-index","KeySchema":[{"AttributeName":"id","KeyType":"HASH"},{"AttributeName":"created_at","KeyType":"RANGE"}],"Projection":{"ProjectionType":"ALL"}}]}'
     headers:
       Content-Type:
       - application/x-amz-json-1.0
       Accept-Encoding:
       - ''
       User-Agent:
-      - aws-sdk-ruby2/2.0.17 ruby/2.1.2 x86_64-darwin14.0
+      - aws-sdk-ruby2/2.0.19 ruby/2.1.2 x86_64-darwin14.0
       X-Amz-Target:
       - DynamoDB_20120810.CreateTable
       X-Amz-Date:
-      - 20150101T055839Z
+      - 20150124T110934Z
       Host:
       - dynamodb.us-east-1.amazonaws.com
       X-Amz-Content-Sha256:
-      - f367f93ea8d0dac13defca67311f4b956a18992bd453cadbd9718bb27e92a2f5
+      - 907908fb9e5f171267453ab9a0a1b7013694a5ac6dbe61cb2239331994acfbef
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20150101/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20150124/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=7a357b3cb933ddd629ea46417ee9467ff7148fcddd0531e29da515129d7093f8
+        Signature=3bfe9ecfccf778d7e288c9b6aab32b8c113e7f80d2781363b29775d6b8339960
       Content-Length:
-      - '489'
+      - '570'
       Accept:
       - "*/*"
   response:
@@ -35,18 +35,67 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 1Q754MSUVVF6GECIADT5DRIPIVVV4KQNSO5AEMVJF66Q9ASUAAJG
+      - Q652I5VS2FGID189QR40DFF8LBVV4KQNSO5AEMVJF66Q9ASUAAJG
       X-Amz-Crc32:
-      - '634016743'
+      - '3601382926'
       Content-Type:
       - application/x-amz-json-1.0
       Content-Length:
-      - '716'
+      - '745'
       Date:
-      - Thu, 01 Jan 2015 05:58:40 GMT
+      - Sat, 24 Jan 2015 11:09:38 GMT
     body:
       encoding: UTF-8
-      string: '{"TableDescription":{"AttributeDefinitions":[{"AttributeName":"id","AttributeType":"S"},{"AttributeName":"name","AttributeType":"S"}],"CreationDateTime":1.420091921193E9,"GlobalSecondaryIndexes":[{"IndexName":"name-index","IndexSizeBytes":0,"IndexStatus":"CREATING","ItemCount":0,"KeySchema":[{"AttributeName":"name","KeyType":"HASH"}],"Projection":{"ProjectionType":"ALL"},"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":20,"WriteCapacityUnits":20}}],"ItemCount":0,"KeySchema":[{"AttributeName":"id","KeyType":"HASH"}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":20,"WriteCapacityUnits":20},"TableName":"index_cities","TableSizeBytes":0,"TableStatus":"CREATING"}}'
+      string: '{"TableDescription":{"AttributeDefinitions":[{"AttributeName":"created_at","AttributeType":"S"},{"AttributeName":"id","AttributeType":"S"},{"AttributeName":"subject","AttributeType":"S"}],"CreationDateTime":1.422097779164E9,"ItemCount":0,"KeySchema":[{"AttributeName":"id","KeyType":"HASH"},{"AttributeName":"subject","KeyType":"RANGE"}],"LocalSecondaryIndexes":[{"IndexName":"created_at-index","IndexSizeBytes":0,"ItemCount":0,"KeySchema":[{"AttributeName":"id","KeyType":"HASH"},{"AttributeName":"created_at","KeyType":"RANGE"}],"Projection":{"ProjectionType":"ALL"}}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":20,"WriteCapacityUnits":20},"TableName":"thread_indices","TableSizeBytes":0,"TableStatus":"CREATING"}}'
     http_version: 
-  recorded_at: Thu, 01 Jan 2015 05:58:41 GMT
+  recorded_at: Sat, 24 Jan 2015 11:09:37 GMT
+- request:
+    method: post
+    uri: https://dynamodb.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"thread_indices"}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.0.19 ruby/2.1.2 x86_64-darwin14.0
+      X-Amz-Target:
+      - DynamoDB_20120810.DescribeTable
+      X-Amz-Date:
+      - 20150124T110937Z
+      Host:
+      - dynamodb.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - a8f8f93d93e861a00ac6994f621264e471cee884ceb7b3786ec48f8cb99ac8d2
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20150124/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=e8be543a657bfbbc3f04fff5b486260ff4030b67439726ccb13d53fa315742a1
+      Content-Length:
+      - '30'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - MALSOL31HA99VF0NG5EURHVSGNVV4KQNSO5AEMVJF66Q9ASUAAJG
+      X-Amz-Crc32:
+      - '1602081351'
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '734'
+      Date:
+      - Sat, 24 Jan 2015 11:09:39 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Table":{"AttributeDefinitions":[{"AttributeName":"created_at","AttributeType":"S"},{"AttributeName":"id","AttributeType":"S"},{"AttributeName":"subject","AttributeType":"S"}],"CreationDateTime":1.422097779164E9,"ItemCount":0,"KeySchema":[{"AttributeName":"id","KeyType":"HASH"},{"AttributeName":"subject","KeyType":"RANGE"}],"LocalSecondaryIndexes":[{"IndexName":"created_at-index","IndexSizeBytes":0,"ItemCount":0,"KeySchema":[{"AttributeName":"id","KeyType":"HASH"},{"AttributeName":"created_at","KeyType":"RANGE"}],"Projection":{"ProjectionType":"ALL"}}],"ProvisionedThroughput":{"NumberOfDecreasesToday":0,"ReadCapacityUnits":20,"WriteCapacityUnits":20},"TableName":"thread_indices","TableSizeBytes":0,"TableStatus":"CREATING"}}'
+    http_version: 
+  recorded_at: Sat, 24 Jan 2015 11:09:38 GMT
 recorded_with: VCR 2.9.3

@@ -7,7 +7,7 @@ module DynamoRecord
 
       self.attributes = {}
 
-      field :id, :string # default primary key
+      field :id, :string # default hash key
     end
 
     module ClassMethods
@@ -67,6 +67,29 @@ module DynamoRecord
           attrs.each do |key, value|
             hash[key] = dump_field(value, self.attributes[key.to_sym])
           end
+        end
+      end
+
+      # def hash_key
+      #   @hash_key ||= self.attributes.select { |k,v| v[:options][:hash_key] }.keys.first rescue nil
+      # end
+
+      def range_key
+        @range_key ||= self.attributes.select { |k,v| v[:options][:range_key] }.keys.first rescue nil
+      end
+
+      def secondary_indexes
+        @secondary_indexes ||= self.attributes.select { |k,v| v[:options][:index] }.keys rescue nil
+      end
+
+      def dynamodb_type(type)
+        case type
+        when :integer, :float
+          'N'
+        when :string, :datetime
+          'S'
+        # else
+        #   'S'
         end
       end
     end

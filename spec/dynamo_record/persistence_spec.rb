@@ -23,27 +23,51 @@ RSpec.describe DynamoRecord::Persistence, :vcr do
   end
 
   describe '#create_table' do
-    context 'with index' do
-      it 'creates table' do        
-        class IndexCity
+
+    context 'with default hash key' do
+      it 'creates table' do
+        class Thread
           include DynamoRecord::Document
 
-          field :name, :string, index: true
+          field :subject, :string
         end
 
-        IndexCity.create_table
+        Thread.create_table
+        key_schema = Thread.describe_table.table.key_schema.first
+        expect(key_schema.attribute_name).to eq('id')
+        expect(key_schema.key_type).to eq('HASH')
       end
     end
 
-    context 'without index' do
+    context 'with range key' do
       it 'creates table' do
-        class NoIndexCity
+        class ThreadRange
           include DynamoRecord::Document
 
-          field :name, :string
+          field :subject, :string, range_key: true
         end
 
-        NoIndexCity.create_table
+        ThreadRange.create_table
+        key_schema = ThreadRange.describe_table.table.key_schema
+        expect(key_schema.first.attribute_name).to eq('id')
+        expect(key_schema.first.key_type).to eq('HASH')
+        expect(key_schema.second.attribute_name).to eq('subject')
+        expect(key_schema.second.key_type).to eq('RANGE')
+      end
+    end
+
+    context 'with index' do
+      it 'creates table' do        
+        class ThreadIndex
+          include DynamoRecord::Document
+
+          field :subject, :string, range_key: true
+          field :created_at, :datetime, index: true
+        end
+
+        ThreadIndex.create_table
+        index = ThreadIndex.describe_table.table.local_secondary_indexes.first
+        expect(index.index_name).to eq('created_at-index')
       end
     end
   end

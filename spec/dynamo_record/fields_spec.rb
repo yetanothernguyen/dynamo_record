@@ -19,17 +19,6 @@ RSpec.describe DynamoRecord::Fields do
                                      last_name: {type: :string, options: {}}})
   end
 
-  it 'accepts adding fields with index' do
-    class City
-      include DynamoRecord::Document
-
-      field :name, :string, index: true
-    end
-
-    expect(City.attributes).to eq({id: {type: :string, options: {}},
-                                   name: {type: :string, options: {index: true}}})
-  end
-
   it 'accepts default value' do
     class City
       include DynamoRecord::Document
@@ -88,6 +77,31 @@ RSpec.describe DynamoRecord::Fields do
       person.attributes = {name: 'Updated Person'}
       expect(person.name).to eq('Updated Person')
       expect(person.activated).to eq(true)
+    end
+  end
+
+  describe 'keys' do
+    it 'returns table\'s range key' do
+      class ThreadKey
+        include DynamoRecord::Document
+
+        field :subject, :string, range_key: true
+      end
+
+      expect(ThreadKey.range_key).to eq(:subject)
+    end
+  end
+
+  describe 'index' do
+    it 'returns table\'s secondary index' do
+      class ThreadKey
+        include DynamoRecord::Document
+
+        field :name, :string, hash_key: true
+        field :subject, :string, index: true
+      end
+
+      expect(ThreadKey.secondary_indexes).to eq([:subject])
     end
   end
 end
