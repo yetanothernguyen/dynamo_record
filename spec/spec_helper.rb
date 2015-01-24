@@ -16,8 +16,3 @@ DynamoRecord.configure do |config|
   config.access_key_id = 'key'
   config.secret_access_key = 'secret'
 end
-
-# DynamoRecord.configure do |config|
-#   config.access_key_id = 'AKIAI6M4LBRLK4COUJ5Q'
-#   config.secret_access_key = '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'
-# end
