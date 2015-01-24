@@ -5,7 +5,7 @@ http_interactions:
     uri: https://dynamodb.us-east-1.amazonaws.com/
     body:
       encoding: UTF-8
-      string: '{"TableName":"people","Key":{"id":{"S":"f9b351b0-d06d-4fff-b8d4-8af162e2b8ba"}}}'
+      string: '{"TableName":"person_ranges","Key":{"id":{"S":"369a0862-5dee-441a-b438-1fb17af2d484"},"created_at":{"S":"2015-01-24T22:15:42+08:00"}}}'
     headers:
       Content-Type:
       - application/x-amz-json-1.0
@@ -16,17 +16,17 @@ http_interactions:
       X-Amz-Target:
       - DynamoDB_20120810.GetItem
       X-Amz-Date:
-      - 20150116T135102Z
+      - 20150124T143941Z
       Host:
       - dynamodb.us-east-1.amazonaws.com
       X-Amz-Content-Sha256:
-      - 11a49d1d6421d3540cf7a7c96423eb631d8b8de996d5069f178a631eea8d8e01
+      - 17e5ae148907c65927f204296d31bccfdfc6aa5c09c7485e0b8008dda0660623
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20150116/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20150124/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=594884042c1dd7c46b5175963fe80f13770a4426946f3cfa8d4e6d1ef9c86c31
+        Signature=e04aad97f5bf39a18db181be28ceb5cfa5280e750f45de84212ea4e552b2a96f
       Content-Length:
-      - '80'
+      - '134'
       Accept:
       - "*/*"
   response:
@@ -35,26 +35,27 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - TJP2MAAV789JHBGT3EK4MC4NQRVV4KQNSO5AEMVJF66Q9ASUAAJG
+      - DC56KPCUJHQ5BHBE01S2JS4BFBVV4KQNSO5AEMVJF66Q9ASUAAJG
       X-Amz-Crc32:
-      - '3221367258'
+      - '3732177927'
       Content-Type:
       - application/x-amz-json-1.0
       Content-Length:
-      - '84'
+      - '131'
       Date:
-      - Fri, 16 Jan 2015 13:51:03 GMT
+      - Sat, 24 Jan 2015 14:39:43 GMT
     body:
       encoding: UTF-8
-      string: '{"Item":{"name":{"S":"Person 1"},"id":{"S":"f9b351b0-d06d-4fff-b8d4-8af162e2b8ba"}}}'
+      string: '{"Item":{"created_at":{"S":"2015-01-24T22:15:42+08:00"},"name":{"S":"A
+        person"},"id":{"S":"369a0862-5dee-441a-b438-1fb17af2d484"}}}'
     http_version: 
-  recorded_at: Fri, 16 Jan 2015 13:51:04 GMT
+  recorded_at: Sat, 24 Jan 2015 14:39:44 GMT
 - request:
     method: post
     uri: https://dynamodb.us-east-1.amazonaws.com/
     body:
       encoding: UTF-8
-      string: '{"TableName":"people","Key":{"id":{"S":"f9b351b0-d06d-4fff-b8d4-8af162e2b8ba"}}}'
+      string: '{"TableName":"person_ranges","Key":{"id":{"S":"369a0862-5dee-441a-b438-1fb17af2d484"},"created_at":{"S":"2015-01-24T22:15:42+08:00"}}}'
     headers:
       Content-Type:
       - application/x-amz-json-1.0
@@ -65,17 +66,17 @@ http_interactions:
       X-Amz-Target:
       - DynamoDB_20120810.DeleteItem
       X-Amz-Date:
-      - 20150116T135104Z
+      - 20150124T143944Z
       Host:
       - dynamodb.us-east-1.amazonaws.com
       X-Amz-Content-Sha256:
-      - 11a49d1d6421d3540cf7a7c96423eb631d8b8de996d5069f178a631eea8d8e01
+      - 17e5ae148907c65927f204296d31bccfdfc6aa5c09c7485e0b8008dda0660623
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20150116/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20150124/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=958b6d99fa3add9c2239c44cf05b7e11de63af677e571e390b3b46acfd6527de
+        Signature=e9f067cbacbae4837bb9a3a1f0dbe266126aa35633a5a92d8c8f832532aed35e
       Content-Length:
-      - '80'
+      - '134'
       Accept:
       - "*/*"
   response:
@@ -84,7 +85,7 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - 2C19L4ABMBIGKMNSLQRD2IK583VV4KQNSO5AEMVJF66Q9ASUAAJG
+      - 694UVIOACTA39N5AG026HESUURVV4KQNSO5AEMVJF66Q9ASUAAJG
       X-Amz-Crc32:
       - '2745614147'
       Content-Type:
@@ -92,18 +93,18 @@ http_interactions:
       Content-Length:
       - '2'
       Date:
-      - Fri, 16 Jan 2015 13:51:04 GMT
+      - Sat, 24 Jan 2015 14:39:44 GMT
     body:
       encoding: UTF-8
       string: "{}"
     http_version: 
-  recorded_at: Fri, 16 Jan 2015 13:51:05 GMT
+  recorded_at: Sat, 24 Jan 2015 14:39:45 GMT
 - request:
     method: post
     uri: https://dynamodb.us-east-1.amazonaws.com/
     body:
       encoding: UTF-8
-      string: '{"TableName":"people","Key":{"id":{"S":"f9b351b0-d06d-4fff-b8d4-8af162e2b8ba"}}}'
+      string: '{"TableName":"person_ranges","Key":{"id":{"S":"369a0862-5dee-441a-b438-1fb17af2d484"},"created_at":{"S":"2015-01-24T22:15:42+08:00"}}}'
     headers:
       Content-Type:
       - application/x-amz-json-1.0
@@ -114,17 +115,17 @@ http_interactions:
       X-Amz-Target:
       - DynamoDB_20120810.GetItem
       X-Amz-Date:
-      - 20150116T135105Z
+      - 20150124T143945Z
       Host:
       - dynamodb.us-east-1.amazonaws.com
       X-Amz-Content-Sha256:
-      - 11a49d1d6421d3540cf7a7c96423eb631d8b8de996d5069f178a631eea8d8e01
+      - 17e5ae148907c65927f204296d31bccfdfc6aa5c09c7485e0b8008dda0660623
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=key/20150116/us-east-1/dynamodb/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=key/20150124/us-east-1/dynamodb/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
-        Signature=6cdf950bda59fa02691f3099a8035a676ee82cb979861271b12a96badf550f5c
+        Signature=d393dca89c02b13f05d8370fdf5b067d0e3384303ffd7796e8c56f51346eed70
       Content-Length:
-      - '80'
+      - '134'
       Accept:
       - "*/*"
   response:
@@ -133,7 +134,7 @@ http_interactions:
       message: OK
     headers:
       X-Amzn-Requestid:
-      - IUSDC4UFAN1QUAH8PUCH4VASFVVV4KQNSO5AEMVJF66Q9ASUAAJG
+      - KLGVS0MTQBA47BBIV11R31L5OBVV4KQNSO5AEMVJF66Q9ASUAAJG
       X-Amz-Crc32:
       - '2745614147'
       Content-Type:
@@ -141,10 +142,10 @@ http_interactions:
       Content-Length:
       - '2'
       Date:
-      - Fri, 16 Jan 2015 13:51:05 GMT
+      - Sat, 24 Jan 2015 14:39:44 GMT
     body:
       encoding: UTF-8
       string: "{}"
     http_version: 
-  recorded_at: Fri, 16 Jan 2015 13:51:05 GMT
+  recorded_at: Sat, 24 Jan 2015 14:39:46 GMT
 recorded_with: VCR 2.9.3

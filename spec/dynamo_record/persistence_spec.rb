@@ -104,11 +104,25 @@ RSpec.describe DynamoRecord::Persistence, :vcr do
     expect(person.name).to eq('New name')
   end
 
-  it 'destroys record' do
-    person = Person.find('f9b351b0-d06d-4fff-b8d4-8af162e2b8ba')
-    person.destroy
-    person = Person.find('f9b351b0-d06d-4fff-b8d4-8af162e2b8ba')
-    expect(person).to be_nil
+  describe '#destroy' do
+    context 'when no range key' do
+      it 'destroys record' do
+        person = Person.find('278aaf78-2f71-467b-a711-658c3bd8cad2')
+        person.destroy
+        person = Person.find('278aaf78-2f71-467b-a711-658c3bd8cad2')
+        expect(person).to be_nil
+      end
+    end
+
+    context 'when there is range key' do
+      it 'destroys record' do
+        person = PersonRange.find('369a0862-5dee-441a-b438-1fb17af2d484', '2015-01-24T22:15:42+08:00')
+        person.destroy
+        person = PersonRange.find('369a0862-5dee-441a-b438-1fb17af2d484', '2015-01-24T22:15:42+08:00')
+        expect(person).to be_nil
+      end
+    end
   end
+  
 
 end

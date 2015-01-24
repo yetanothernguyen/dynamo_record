@@ -1,0 +1,150 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dynamodb.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"people","Key":{"id":{"S":"278aaf78-2f71-467b-a711-658c3bd8cad2"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.0.19 ruby/2.1.2 x86_64-darwin14.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      X-Amz-Date:
+      - 20150124T141901Z
+      Host:
+      - dynamodb.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - 03dd09f0b2bc9e512a5ee906ce0aba66caa8e61d1b7a88a0c5d846502b3cfbac
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20150124/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=148ff6265b24d5bf668e0aa1a43945954155bfc3375ed13081cc33e905b63b88
+      Content-Length:
+      - '80'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - SMUIA5ABCJ8AQQMK2T2TV957LNVV4KQNSO5AEMVJF66Q9ASUAAJG
+      X-Amz-Crc32:
+      - '2414265853'
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '131'
+      Date:
+      - Sat, 24 Jan 2015 14:19:02 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Item":{"name":{"S":"A person"},"created_at":{"S":"2015-01-24T22:15:40+08:00"},"id":{"S":"278aaf78-2f71-467b-a711-658c3bd8cad2"}}}'
+    http_version: 
+  recorded_at: Sat, 24 Jan 2015 14:19:02 GMT
+- request:
+    method: post
+    uri: https://dynamodb.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"people","Key":{"id":{"S":"278aaf78-2f71-467b-a711-658c3bd8cad2"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.0.19 ruby/2.1.2 x86_64-darwin14.0
+      X-Amz-Target:
+      - DynamoDB_20120810.DeleteItem
+      X-Amz-Date:
+      - 20150124T141902Z
+      Host:
+      - dynamodb.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - 03dd09f0b2bc9e512a5ee906ce0aba66caa8e61d1b7a88a0c5d846502b3cfbac
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20150124/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=1c6566a4ae1c1cc4297fefec7ef29fcaf5e7228ac9b33cc64860147ed77cb0d0
+      Content-Length:
+      - '80'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - EMC3FTC599C3G3LCU8J413RVTVVV4KQNSO5AEMVJF66Q9ASUAAJG
+      X-Amz-Crc32:
+      - '2745614147'
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '2'
+      Date:
+      - Sat, 24 Jan 2015 14:19:03 GMT
+    body:
+      encoding: UTF-8
+      string: "{}"
+    http_version: 
+  recorded_at: Sat, 24 Jan 2015 14:19:03 GMT
+- request:
+    method: post
+    uri: https://dynamodb.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"people","Key":{"id":{"S":"278aaf78-2f71-467b-a711-658c3bd8cad2"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.0.19 ruby/2.1.2 x86_64-darwin14.0
+      X-Amz-Target:
+      - DynamoDB_20120810.GetItem
+      X-Amz-Date:
+      - 20150124T141903Z
+      Host:
+      - dynamodb.us-east-1.amazonaws.com
+      X-Amz-Content-Sha256:
+      - 03dd09f0b2bc9e512a5ee906ce0aba66caa8e61d1b7a88a0c5d846502b3cfbac
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=key/20150124/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=3e050ef194577201c9f15bb3593619257a2a96f10070273637d867b5a52cf953
+      Content-Length:
+      - '80'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - 85OSGBSDQL99CLPRVEFQFD6CVVVV4KQNSO5AEMVJF66Q9ASUAAJG
+      X-Amz-Crc32:
+      - '2745614147'
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '2'
+      Date:
+      - Sat, 24 Jan 2015 14:19:03 GMT
+    body:
+      encoding: UTF-8
+      string: "{}"
+    http_version: 
+  recorded_at: Sat, 24 Jan 2015 14:19:04 GMT
+recorded_with: VCR 2.9.3

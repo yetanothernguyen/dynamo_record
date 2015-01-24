@@ -104,8 +104,13 @@ module DynamoRecord
 
     def destroy
       options = self.class.default_options
+      key = { 'id' => self.id }
+      if range_key = self.class.range_key
+        key[range_key] = self.class.dump_field(self.read_attribute(range_key), self.class.attributes[range_key])
+      end
+
       response = self.class.client.delete_item(
-        options.merge(key: { 'id' => self.id} )
+        options.merge(key: key )
       )
     end
 
