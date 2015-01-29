@@ -31,8 +31,8 @@ module DynamoRecord
           value.to_i
         when :string
           value.to_s
-        when :float
-          value.to_f
+        when :big_decimal
+          value.to_d
         when :boolean
           if value == "true" || value == true
             true
@@ -84,7 +84,7 @@ module DynamoRecord
 
       def dynamodb_type(type)
         case type
-        when :integer, :float
+        when :integer, :big_decimal
           'N'
         when :string, :datetime
           'S'
