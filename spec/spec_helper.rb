@@ -13,6 +13,6 @@ VCR.configure do |c|
 end
 
 DynamoRecord.configure do |config|
-  config.access_key_id = 'key'
-  config.secret_access_key = 'secret'
+  config.access_key_id = ENV['DYNAMODB_KEY'] || 'key'
+  config.secret_access_key = ENV['DYNAMODB_SECRET'] || 'secret'
 end

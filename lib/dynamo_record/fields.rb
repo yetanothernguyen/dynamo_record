@@ -70,9 +70,9 @@ module DynamoRecord
         end
       end
 
-      # def hash_key
-      #   @hash_key ||= self.attributes.select { |k,v| v[:options][:hash_key] }.keys.first rescue nil
-      # end
+      def hash_key
+        :id # default hash key
+      end
 
       def range_key
         @range_key ||= self.attributes.select { |k,v| v[:options][:range_key] }.keys.first rescue nil

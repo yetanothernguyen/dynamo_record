@@ -42,6 +42,19 @@ RSpec.describe DynamoRecord::Query, :vcr do
   end
 
   describe 'querying' do
+
+    describe '#find_by_hash_and_range' do
+      it 'returns a record by hash key and range key' do
+        person = PersonRange.find_by_hash_and_range('1', '2015-01-28T14:37:01+08:00')
+        expect(person.count).to eq(1)
+      end
+
+      it 'returns all records by hash key' do
+        people = PersonRange.find_by_hash_and_range('1')
+        expect(people.count).to eq(2)
+      end
+    end
+
     describe '#where' do
       it 'queries by condition' do
         people = Person.where(name: 'Person 2')
