@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dynamodb.us-east-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: '{"TableName":"person_ranges","KeyConditions":{"id":{"AttributeValueList":[{"S":"1"}],"ComparisonOperator":"EQ"}},"Limit":1,"ExclusiveStartKey":{"id":{"S":"1"},"created_at":{"S":"2015-01-28T14:37:01+08:00"}}}'
+    headers:
+      Content-Type:
+      - application/x-amz-json-1.0
+      Accept-Encoding:
+      - ''
+      User-Agent:
+      - aws-sdk-ruby2/2.0.21 ruby/2.1.2 x86_64-darwin14.0
+      X-Amz-Target:
+      - DynamoDB_20120810.Query
+      X-Amz-Date:
+      - 20150130T111050Z
+      X-Amz-Content-Sha256:
+      - 3deaf477f931d53e7bee2b2c523632b105e5987b027b9c2d989c8738d3d20711
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAJGUSFVPIJ4LHTPCQ/20150130/us-east-1/dynamodb/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date;x-amz-target,
+        Signature=c32fc1ca3fd87c961d7456c90575939967e477955d996344ab1ac37c4e489492
+      Content-Length:
+      - '207'
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Amzn-Requestid:
+      - V1P73GS8J7U1UM869OKHNVOF9JVV4KQNSO5AEMVJF66Q9ASUAAJG
+      X-Amz-Crc32:
+      - '542610492'
+      Content-Type:
+      - application/x-amz-json-1.0
+      Content-Length:
+      - '185'
+      Date:
+      - Fri, 30 Jan 2015 11:10:51 GMT
+    body:
+      encoding: UTF-8
+      string: '{"Count":1,"Items":[{"created_at":{"S":"2015-01-29T14:36:59+08:00"},"id":{"S":"1"}}],"LastEvaluatedKey":{"created_at":{"S":"2015-01-29T14:36:59+08:00"},"id":{"S":"1"}},"ScannedCount":1}'
+    http_version: 
+  recorded_at: Fri, 30 Jan 2015 11:10:52 GMT
+recorded_with: VCR 2.9.3

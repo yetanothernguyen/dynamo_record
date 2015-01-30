@@ -27,5 +27,9 @@ module DynamoRecord
         yield self.class.new(page, @klass)
       end
     end
+
+    def last_evaluated_key
+      @pager.last_evaluated_key
+    end
   end
 end
