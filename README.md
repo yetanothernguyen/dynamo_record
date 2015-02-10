@@ -42,6 +42,12 @@ class User
 end
 ```
 
+`field` accepts the following options:
+- :default to specify a default value
+- :hash_key to specify a DynamoDB hash key
+- :range_key to specify a DynamoDB range key
+- :index to specify an index
+
 ### Persistence
 DynamoRecord provides a similar persistence interface compared to other ORMs.
 
@@ -53,6 +59,19 @@ user = User.create(first_name: 'John', last_name: 'Doe')
 
 user.destroy
 ```
+
+### Querying
+
+```ruby
+users = User.all
+
+users = User.where(first_name: 'John')
+
+users = User.where(first_name: 'John', limit: 5)
+
+user = User.find('f9b351b0-d06d-4fff-b8d4-8af162e2b8ba')
+```
+
 
 ## Contributing
 
